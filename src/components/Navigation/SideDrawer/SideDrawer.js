@@ -4,11 +4,13 @@ import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 
-const sideDrawer = () => {
+const sideDrawer = (props) => {
   //...
   return (
     <div className={classes.SideDrawer}>
-      <Logo />
+      <div className={classes.Logo}>
+        <Logo height="11%" />
+      </div>
       <nav>
         <NavigationItems />
       </nav>
