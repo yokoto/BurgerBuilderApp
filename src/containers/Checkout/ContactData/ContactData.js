@@ -180,7 +180,7 @@ class ContactData extends Component {
         clicked={this.orderHandler}>ORDER</Button>
     </form>
     );
-    if (this.prop.loading) {
+    if (this.props.loading) {
       form = <Spinner />;
     }
     return (
@@ -194,9 +194,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state=> {
   return {
-    ings: state.ingredients,
-    price: state.totalPrice,
-    loading: state.loading
+    ings: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    loading: state.order.loading
   }
 };
 

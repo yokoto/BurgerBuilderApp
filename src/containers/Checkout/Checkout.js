@@ -31,17 +31,17 @@ class Checkout extends Component {
 
 
   render() {
-    const summary = <Redirect to="/"/>
+    let summary = <Redirect to="/"/>
     if (this.props.ings) {
       summary = (
         <div>
-        <CheckoutSummary
-          ingredients={this.props.ings}
-          checkoutCancelled={this.checkoutCancelledHandler}
-          checkoutContinued={this.checkoutConitnuedHandler}/>
-        <Route
-          path={this.props.match.path + '/contact-data'}
-          component={ContactData} />
+          <CheckoutSummary
+            ingredients={this.props.ings}
+            checkoutCancelled={this.checkoutCancelledHandler}
+            checkoutContinued={this.checkoutConitnuedHandler}/>
+          <Route
+            path={this.props.match.path + '/contact-data'}
+            component={ContactData} />
         </div>
       );
     }
@@ -51,7 +51,7 @@ class Checkout extends Component {
 
 const mapStateToProps = state => {
   return {
-    ings: state.ingredients,
+    ings: state.burgerBuilder.ingredients,
   }
 }
 
